@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: rgb(135, 169, 107);
+  --buttonHoveer: rgb(84, 103, 69);
+  --error: #e7195a;
+  --text: #333
+}
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: var(--text);
+}
+.content {
+  background-color: #e2e5e5;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+button {
+  background: var(--primary);
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--buttonHoveer);
+  color: white;
+}
+
+/* navbar styles */
+.navbar {
+  padding: 20px 200px;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary);
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar  button{
+  margin: 0 20px 0 20px;
+  border: 0;
+  font-size: 16px;
+}
+.navbar button:hover{
+  background-color: var(--primary);
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #e8e5e5;
+}
+
+/* book previews / list */
+.book-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+  position: relative;
+}
+/*.book-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}*/
+.book-preview h2 {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.book-preview a{
+  text-decoration: none;
+}
+
+/*burger styles */
+.burger button.dropdown{
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 20px;
+  width: 20px;
+  background: url(../public/kebabButton.png);
+  background-size: cover;
+}
+
+.burger button.dropdown:hover{
+  background: url(../public/kebabButton2.png);
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+}
+
+.burger div.options{
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  list-style-type:none;
+  display:none!important;
+  width: auto;
+  text-align:left;
+  white-space:normal;
+  background-color: var(--primary);
+}
+
+.burger a.opt:hover {
+  background-color: var(--buttonHoveer)
+}
+
+.burger div.visible{
+  display:block!important;
+}
+
+.burger a.opt{
+  cursor: pointer;
+  color: #ffffff;
+  min-width: max-content;
+  padding:3px 10px;
+  display:block!important;
+  text-decoration: none;
+}
+
+/* book details page */
+.book-details h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.book-details div {
+  margin: 20px 0;
+}
+.book-details button {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* edit and create forms styles */
+.create, .edit, .delete {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label, .edit label {
+  text-align: left;
+  display: block;
+}
+.create h2, .edit h2 {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 30px;
+}
+.create input,  .edit input, .create textarea, .edit textarea, .create select,  .edit select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button,  .edit button, .delete button { 
+  padding: 8px;
+  border: 0;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+button.del-butt:hover {
+  background-color: #d60606;
+}
+
+/*modal styles*/
+div.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding: 50px;
+  z-index: 1000;
+  font-size: 30px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+div.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0 , 0, 0, .7);
+  z-index: 1000;
+}
+
+/* auth forms  styles*/
+form.signup, form.login {
+  max-width: 300px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.login, .signup {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login label, .signup label {
+  text-align: left;
+  display: block;
+}
+.login h2, .signup h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+.login input,  .signup input, .login textarea, .signup textarea, .login select,  .signup select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.login button,  .signup button {
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* error styles */
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
