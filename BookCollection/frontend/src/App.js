@@ -1,0 +1,47 @@
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+
+//hooks
+import { useAuthContext } from "./hooks/useAuthContext";
+
+//pages
+import Login from './pages/Login';
+import Signup from './pages/Signup.js';
+import Home from './pages/Home';
+
+//Components
+import NotFound from './components/NotFound';
+import Navbar from './components/Navbar';
+import CreateModal from './components/CreateModal';
+
+function App() {
+  //context vars
+  const {user} = useAuthContext()
+
+  return (
+    <div className="App">      
+      <BrowserRouter>
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route 
+              path="/"
+              element={user ? <Home /> : <Navigate to="/login" />}
+            />
+            <Route 
+              path="/login"
+              element={!user ? <Login /> : <Navigate to="/" />}
+            />
+            <Route 
+              path="/signup"
+              element={!user ? <Signup /> : <Navigate to="/" />}
+            />    
+            <Route path="*" element={<NotFound />} />         
+          </Routes>
+          <CreateModal />
+        </div>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
